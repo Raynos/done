@@ -8,6 +8,7 @@ var treehtml = require("./tree.html")
     , map = require("lazy-map-stream")
     , after = require("insert").after
     , to = require("write-stream")
+    , toArray = [].slice.call.bind([].slice)
 
 var ENTER = 13
     , LEFT = 37
@@ -47,14 +48,43 @@ function Tree() {
         return event.keyCode === LEFT && event.ctrlKey
     })
 
-    forEach(ctrlLefts, function() {})
+    forEach(ctrlLefts, function() {
+        var parentUl = li.parentNode
+        if(parentUl.className === "root-ul") {
+            return
+        }
+
+        // Get the parent's li
+        var parentLi = parentUl.parentNode.parentNode
+        after(parentLi, li)
+        $focus()
+    })
 
     var ctrlRights = filter(keydowns, function (event) {
         // console.log(event)
         return event.keyCode === RIGHT && event.ctrlKey
     })
 
-    forEach(ctrlRights, function() {})
+    forEach(ctrlRights, function() {
+        var parentUl = li.parentNode
+            , children = toArray(parentUl.children)
+            , index = children.indexOf(li)
+
+        // Indenting first element does not make sense
+        if(index === 0) {
+            return
+        }
+
+        // We become child of previous sibling
+        var newParent = children[index - 1]
+
+        // Move us to the new parent
+        // (div, then  its ul)
+        newParent.children[0].children[1].appendChild(li)
+
+        // We got moved, so we lost focus
+        $focus()
+    })
 
 
     // Here is another way to do it:
@@ -70,7 +100,11 @@ function Tree() {
 
     return {
         element: li,
-        focus: function() { elements.item.focus()}
+        focus: $focus
+    }
+
+    function $focus() {
+        elements.item.focus()
     }
 }
 

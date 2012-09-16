@@ -14,8 +14,9 @@ Navigation (joint 2)
 Up, down to move focus between items (regardless of depth)
 
 Indentation (3)
-Tab, shift tab to indent or unindent the subtree
+Ctrl+Left,  Ctrl+Right to indent or unindent the subtree
 The first child of a parent can't be indented (it doesn't make sense)
+Outdent item makes it successor sibling of current parent
 
 Reordering (5)
 Ctrl+up, Ctrl+down - moves item up or down visually.
