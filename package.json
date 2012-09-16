@@ -1,0 +1,32 @@
+{
+  "name": "done",
+  "version": "0.0.1",
+  "description": "done",
+  "keywords": [],
+  "author": "Raynos <raynos2@gmail.com>",
+  "repository": "git://github.com/Raynos/done.git",
+  "main": "index",
+  "homepage": "https://github.com/Raynos/done",
+  "contributors": [
+    {
+      "name": "Jake Verbaten"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Raynos/done/issues",
+    "email": "raynos2@gmail.com"
+  },
+  "dependencies": {
+    "dom-walk": "0.0.1"
+  },
+  "devDependencies": {
+    "browserify-server": "~1.2.2"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/Raynos/done/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {}
+}
