@@ -1,0 +1,37 @@
+Items in the To Do tree are represented as nested HTML '<ul>' elements.
+
+Focus (joint 2)
+Currently selected item has an editable textbox with current text.
+
+Deleting items (7)
+Backspace when item is empty. Focus then moves to item visually above it.
+
+New items (1)
+Press enter on an existing item, to create an item below it.
+The new item has the same depth.
+
+Navigation (joint 2)
+Up, down to move focus between items (regardless of depth)
+
+Indentation (3)
+Tab, shift tab to indent or unindent the subtree
+The first child of a parent can't be indented (it doesn't make sense)
+
+Reordering (5)
+Ctrl+up, Ctrl+down - moves item up or down visually.
+Item becomes indented to depth of item below new position.
+Subtree follows moved item, with same relative indentation as before moving
+
+Collapsing (6)
+Ctrl+space
+
+Marking complete (4)
+Initially every element has a light red background
+Pressing Ctrl+D causes it to be marked as completed, with a green background.
+If all children of a parent item become complete, the parent is marked as completed.
+If a child becomes uncompleted, the parent is then marked as uncompleted.
+(A parent whose children are all marked as complete may be re-marked as uncompleted even if all children are completed)
+
+Not yet:
+Removing items
+Saving
