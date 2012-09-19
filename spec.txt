@@ -1,10 +1,10 @@
 Items in the To Do tree are represented as nested HTML '<ul>' elements.
 
 Focus (joint 2)
-Currently selected item has an editable textbox with current text.
+Currently selected item has an editable textbox with current text. (Until (8), every item has a textbox)
 
 Deleting items (7)
-Backspace when item is empty. Focus then moves to item visually above it.
+Backspace when item text is empty deletes it. Focus then moves to item visually above it.
 
 New items (1)
 Press enter on an existing item, to create an item below it.
@@ -33,6 +33,15 @@ If all children of a parent item become complete, the parent is marked as comple
 If a child becomes uncompleted, the parent is then marked as uncompleted.
 (A parent whose children are all marked as complete may be re-marked as uncompleted even if all children are completed)
 
+Textbox appears only when item has focus(8)
+
+Completion comments (9?)
+Possible: Completed items can have a comment - e.g. brief answer, if the TODO was a "find answer to this question"
+
+
+Persistence (10)
+Possibly manually load/save from local file, parsing four-space indentation into tree structure
+Serialise and import/export that?
+
 Not yet:
 Removing items
-Saving
