@@ -28,7 +28,7 @@ Ctrl+space
 
 Marking complete (4)
 Initially every element has a light red background
-Pressing Ctrl+D causes it to be marked as completed, with a green background.
+Pressing Ctrl+Enter causes it to be marked as completed, with a green background.
 If all children of a parent item become complete, the parent is marked as completed.
 If a child becomes uncompleted, the parent is then marked as uncompleted.
 (A parent whose children are all marked as complete may be re-marked as uncompleted even if all children are completed)
